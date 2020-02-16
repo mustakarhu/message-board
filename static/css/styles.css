@@ -1,0 +1,48 @@
+.grid {
+    border: 5px solid rgb(111,41,97);
+    display: grid;
+    grid-template-columns: 150px 200px 1100px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    width: 1450px;
+    height: 1000px;
+}
+
+.grid > .name {
+    background-color: rgba(111,41,97,.4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid > .time {
+    background-color: rgba(200,41,97,.4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid > .message {
+    background-color: rgba(0,41,97,.4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.nametext {
+    font-size: 25px;
+    color: blue;
+}
+
+.timetext {
+    font-size: 20px;
+    text-align: center;
+}
+
+.messagetext {
+    font-size: 20px;
+}
+
+.formName {
+    width: 100px;
+}
+
+.formMessage {
+    width: 600px;
+}

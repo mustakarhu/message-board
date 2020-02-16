@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Simple Message Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<style>
+      .alert {
+        color: red;
+      }
+</style>
+
+{% block body %}{% endblock %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}

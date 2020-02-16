@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Message Board</h1>
+
+<h4>How are you today?</h4>
+
+<form  method="POST">
+    {{ form.csrf_token }}
+    {{ form.name.label }} <div>{{form.name (class_="formName")}}</div>
+    {{ form.message.label }} <div>{{form.message (class_="formMessage")}}</div>
+    <br>
+    <div>{{ form.post() }}</div>
+    <br>
+</form>
+
+<div class="grid">
+    {% for row in range(num_messages_to_show) %}
+        <div class="name">
+            <div class="nametext">{{rows[row][0]}}</div>
+        </div>
+
+        <div class="time">
+            <div class="timetext">{{rows[row][1]}}</div>
+        </div>
+
+        <div class="message">
+            <div class="messagetext">{{rows[row][2]}}</div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
