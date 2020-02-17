@@ -44,7 +44,8 @@ def write(rows, name, message):
 
 def checkLen(rows):
     ''
-    ''' We want to show maximum 20 messages on our message board. This function should return a number.
+    ''' This function should return the length of rows. 
+    We also want to show maximum 20 messages on our message board.
     If there are more than 20 in the data file, you should show the 20 latest messages.
     '''
     # Your code here
