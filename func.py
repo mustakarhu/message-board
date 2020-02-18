@@ -15,6 +15,10 @@ def read(data):
     Bonus: You might want to show the latest messages first. How would you do that?
     '''
     # Your code here
+    rows = []
+    # adding a tuple for each dictionary entry
+    for i in range(len(data["messages"])):
+        rows += [(data["names"][i], data["posted_at"][i], data["messages"][i])]
 
     return rows
 
@@ -38,7 +42,17 @@ def write(rows, name, message):
     Note also the format of the date time should be the same as in the original data.
     '''
     # Your code here
+    data = {"names": [], "posted_at": [], "messages": []}
+    for row in rows:
+        data["names"].append(row[0])
+        data["posted_at"].append(row[1])
+        data["messages"].append(row[2])
 
+    data["names"].append(name)
+    data["posted_at"].append(datetime.now().strftime("%d/%m/%Y %H:%M"))
+    data["messages"].append(message)
+
+    # print(type(datetime.now().isoformat()))
     return data
 
 
@@ -49,3 +63,4 @@ def checkLen(rows):
     If there are more than 20 in the data file, you should show the 20 latest messages.
     '''
     # Your code here
+    return len(rows)
